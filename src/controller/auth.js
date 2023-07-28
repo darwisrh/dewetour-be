@@ -32,7 +32,7 @@ const register = async (req, res) => {
     })
 
     // If email exist then cancel register
-    if (oldUser?.email === req.body.email) {
+    if (oldUser) {
       res.send({
         status: 'error',
         message: 'Email is already registered'
